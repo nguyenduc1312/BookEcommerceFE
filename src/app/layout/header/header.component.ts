@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,7 @@ export class HeaderComponent {
 
   menulist: { title: string; path: string }[] = [];
   isMenu = false;
-  constructor() {
+  constructor(public auth: AuthService) {
   }
   openMenu() {
     this.isMenu = true;
@@ -22,6 +23,10 @@ export class HeaderComponent {
   }
   logOut() {
     // this.authService.logout();
+  }
+
+  logIn() {
+    this.auth.loginWithRedirect();
   }
   ngOnInit(): void {
     // this.cart = this.cartService.getCart;

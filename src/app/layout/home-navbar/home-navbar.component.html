@@ -1,0 +1,29 @@
+<div class="bg-gray-800 text-white p-2">
+    <div class="container mx-auto flex items-center">
+      <!-- Manage Account -->
+      <div class="px-4">
+        <a href="#" class="text-sm hover:text-gray-300">Manage Account</a>
+      </div>
+  
+      <!-- Manage Company -->
+      <div class="px-4">
+        <a href="#" class="text-sm hover:text-gray-300">Manage Company</a>
+      </div>
+  
+      <!-- Manage Everything (Dropdown with ul/li) -->
+      <div class="relative px-4 group" (mouseenter)="toggleDropdown(true)" (mouseleave)="toggleDropdown(true)">
+        <a href="#" class="text-sm hover:text-gray-300">Manage Everything</a>
+        
+        <!-- Dropdown List using ul and li -->
+        <ul *ngIf="dropdownVisible" class="absolute left-0 mt-2 w-48 bg-white text-black shadow-md rounded-md border border-gray-300 transition-opacity duration-300 opacity-0 group-hover:opacity-100">
+          <li>
+            <a [routerLink]="['admin','category']" class="block px-4 py-2 text-sm hover:bg-gray-200 rounded-md transition-colors duration-200">Category</a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-200 rounded-md transition-colors duration-200">Product</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  

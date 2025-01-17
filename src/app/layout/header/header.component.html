@@ -2,7 +2,7 @@
     <nav class="px-2 md:px-6 lg:px-10 md:py-2">
       <div class="flex justify-between items-center pt-2 md:pt-0">
           <a routerLink="/" class="flex flex-col items-center">
-            <!-- <img src="assets/images/logo.png" alt="brand" class="w-[40px]" /> -->
+            <img src="assets/images/logo.png" alt="brand" class="w-[40px]" />
             <span class="text-sm font-semibold text-white bg-[#3c64a9] px-3 rounded rotate-6">
                 BOOK 2 BUY
             </span>
@@ -31,10 +31,14 @@
               </a>
             </li>
             <li class="top-nav-menu-item">
-              <a class="py-1 flex-col md:flex-row" [routerLink]="['/login']">
+              <!-- <a class="py-1 flex-col md:flex-row" [routerLink]="['/login']">
                 <i title="Login" class="fa-regular fa-user"></i>
                 <span class="md:hidden text-xs">Login</span>
-              </a>
+              </a> -->
+              <button class="py-1 flex-col md:flex-row" (click)="logIn()">
+                <i title="Login" class="fa-regular fa-user"></i>
+                <span class="text-xs">Login</span>
+              </button>
             </li>
             <li class="top-nav-menu-item">
               <button class="py-1 flex-col md:flex-row" (click)="logOut()">
